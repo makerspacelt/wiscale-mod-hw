@@ -1,0 +1,17 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,6.0.7+dfsg-1~bpo11+1*
+G04 #@! TF.ProjectId,wiscale-mod,77697363-616c-4652-9d6d-6f642e6b6963,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Paste,Top*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10R,7.000000X7.000000*%
+G04 APERTURE END LIST*
+D10*
+X191600000Y-81200000D03*
+X111600000Y-81200000D03*
+M02*

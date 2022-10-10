@@ -12,7 +12,8 @@ This is ESP8266 and HX711 based weight monitoring device.
 Dev NOTE: before commit, run `./kibot.sh` to regenerate documentation, bom, gerbers and other assets.
 
 * [schematics.pdf](gen/schematics.pdf)
-* [pcb.pdf](gen/schematics.pdf)
+* [pcb.pdf with dimensions](gen/pcb.pdf)
+* [pcb_bottom.pdf for toner transfer](gen/pcb_bottom.pdf)
 * [ibom.html](gen/bom_ibom.html)
 * [gerbers.zip](gen/gerbers/gerbers.zip)
 

@@ -12,25 +12,18 @@ preflight:
   run_erc: false
   run_drc: false
 
-filters:
-  - name: lcsc_parts
-    type: generic
-    include_only:
-      - column: 'LCSC Part Number'
-        regex: '^C\d+'
 
 outputs:
   - name: print_sch
     type: pdf_sch_print
     options:
-      output: 'gen/schematics.pdf'
+      output: '../gen/schematics.pdf'
 
 
   - name: pcb_print
     type: pcb_print
     options:
-      output: 'gen/pcb.pdf'
-      title: "MagLock 2"
+      output: '../gen/pcb.pdf'
       force_edge_cuts: true
       keep_temporal_files: false
       plot_sheet_reference: false
@@ -43,39 +36,31 @@ outputs:
             color: '#111111'
           - layer: F.SilkS
             color: '#FFFFFF'
+          - layer: User.Drawings
+            color: '#444444'
+          - layer: User.Comments
 
-        - sheet: 'Functional Overview'
-          layers: [ User.3, User.2 ]
-          monochrome: true
 
-        - sheet: 'Power and Fuses'
-          layers: [ User.3, User.4 ]
-          monochrome: true
-
-        - sheet: 'LED Indicators'
-          layers: [ User.3, User.5 ]
-          monochrome: true
-
-        - sheet: 'Board Dimensions'
-          layers: [ User.8 ]
-          monochrome: true
-
-        - sheet: 'Mounting Holes'
-          layers: [ User.9 ]
-          monochrome: true
+  - name: pdf
+    type: pdf
+    layers: [ B.Cu ]  
+    options:
+      output: '../gen/pcb_bottom.pdf'
+      exclude_edge_layer: false
+      drill_marks: small
 
 
   - name: pcb_image_2d_front
     type: pcbdraw
     options:
-      output: 'gen/img_pcb_2d_front_bare.jpg'
+      output: '../gen/img_pcb_2d_front_bare.jpg'
       format: jpg
       dpi: 300
 
   - name: pcb_image_2d_back
     type: pcbdraw
     options:
-      output: 'gen/img_pcb_2d_back_bare.jpg'
+      output: '../gen/img_pcb_2d_back_bare.jpg'
       format: jpg
       dpi: 300
       bottom: true
@@ -84,74 +69,46 @@ outputs:
   - name: pcb_image_3d_main
     type: render_3d
     options:
-      output: 'gen/img_pcb_3d_main.png'
+      output: '../gen/img_pcb_3d_main.png'
       download: true
-      rotate_x: 7
+      rotate_x: 5
       rotate_z: -3
-      move_y: 2
+      move_y: 0
       solder_mask: '#104020'
       orthographic: false
       ray_tracing: true
       width: 1200
-      height: 1000
+      height: 600
       view: top
-      zoom: 3
+      zoom: 6
 
   - name: pcb_image_3d_front
     type: render_3d
     options:
-      output: 'gen/img_pcb_3d_front.png'
+      output: '../gen/img_pcb_3d_front.png'
       orthographic: true
       download: true
       solder_mask: '#104020'
       ray_tracing: true
       width: 1200
-      height: 1200
+      height: 600
       view: top
-      zoom: 3
+      zoom: 6
 
 
   - name: ibom_html
     type: ibom
     options:
-      output: 'gen/bom_ibom.html'
+      output: '../gen/bom_ibom.html'
       no_compression: true
       highlight_pin1: true
       layer_view: F
-
-  - name: full_bom
-    type: bom
-    options:
-      output: 'gen/bom.csv'
-      ref_separator: ','
-      csv:
-        hide_pcb_info: true
-        hide_stats_info: true
-        quote_all: true
-
-  - name: lcsl_bom
-    type: bom
-    options:
-      output: 'gen/bom_lcsc.csv'
-      ref_separator: ','
-      exclude_filter: lcsc_parts
-      columns:
-        - field: 'Quantity Per PCB'
-          name: 'Quantity'
-        - 'LCSC Part Number'
-        - 'Value'
-        - 'Footprint'
-      csv:
-        hide_pcb_info: true
-        hide_stats_info: true
-        quote_all: true
-
 
 
   - name: JLCPCB_gerbers
     comment: Gerbers compatible with JLCPCB
     type: gerber
-    dir: 'gen/gerbers'
+    dir: '../gen/gerbers'
     options: &gerber_options
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
@@ -184,7 +141,7 @@ outputs:
   - name: JLCPCB_drill
     comment: Drill files compatible with JLCPCB
     type: excellon
-    dir: 'gen/gerbers'
+    dir: '../gen/gerbers'
     options:
       pth_and_npth_single_file: false
       pth_id: '-PTH'
@@ -196,7 +153,7 @@ outputs:
   - name: JLCPCB
     comment: ZIP file for JLCPCB
     type: compress
-    dir: 'gen/gerbers'
+    dir: '../gen/gerbers'
     options:
       output: gerbers.zip
       files:
