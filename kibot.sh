@@ -28,4 +28,6 @@ zip -qjorX9 -n zip gen/gerbers/gerbers.zip ./gen/gerbers
 
 # remove garbage changes from schematics.pdf
 sed -i '/[/]CreationDate.*$/d' ./gen/schematics.pdf
+sed -i '/[/]CreationDate.*$/d' ./gen/pcb.pdf
+sed -i '/[/]CreationDate.*$/d' ./gen/pcb_bottom.pdf
 
