@@ -18,6 +18,11 @@ Dev NOTE: before commit, run `./kibot.sh` to regenerate documentation, bom, gerb
 * [gerbers.zip](gen/gerbers/gerbers.zip)
 
 
+Software notes:
+
+* keep D0 as input at all times for compatibility with older hardware (v1.0).
+
+
 ![PCB 2d front bare](gen/img_pcb_2d_front_bare.jpg)
 ![PCB 2d back bare](gen/img_pcb_2d_back_bare.jpg)
 

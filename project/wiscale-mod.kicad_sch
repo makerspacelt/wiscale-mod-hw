@@ -1764,7 +1764,6 @@
     )
   )
 
-
   (junction (at 80.01 123.19) (diameter 0) (color 0 0 0 0)
     (uuid 185a866c-850d-4a97-bfc7-0a168d633f72)
   )
@@ -1872,13 +1871,13 @@
   )
 
   (no_connect (at 181.61 121.92) (uuid 078f4239-f76a-47de-a919-17171a32a563))
-  (no_connect (at 181.61 119.38) (uuid 078f4239-f76a-47de-a919-17171a32a563))
-  (no_connect (at 181.61 111.76) (uuid 078f4239-f76a-47de-a919-17171a32a563))
+  (no_connect (at 181.61 119.38) (uuid 078f4239-f76a-47de-a919-17171a32a564))
+  (no_connect (at 181.61 111.76) (uuid 078f4239-f76a-47de-a919-17171a32a565))
   (no_connect (at 161.29 119.38) (uuid 13032a29-e16a-47c4-97ba-9f0c95613ffe))
-  (no_connect (at 161.29 121.92) (uuid 13032a29-e16a-47c4-97ba-9f0c95613ffe))
+  (no_connect (at 161.29 121.92) (uuid 13032a29-e16a-47c4-97ba-9f0c95613fff))
   (no_connect (at 161.29 132.08) (uuid 31fc6c9d-6b31-4aee-b217-b0d35b27c343))
   (no_connect (at 173.99 101.6) (uuid 45d9f54f-43ab-43c8-9ce3-aabf92cc92e3))
-  (no_connect (at 161.29 124.46) (uuid c63c4e10-700f-4b34-9217-eddbaea10c2c))
+  (no_connect (at 161.29 111.76) (uuid ba70565f-334d-43a4-82f1-56e29445d62c))
 
   (wire (pts (xy 196.85 24.13) (xy 196.85 33.02))
     (stroke (width 0) (type default) (color 0 0 0 0))
@@ -2334,7 +2333,7 @@
     (effects (font (size 0.3 0.3)) (justify left bottom))
     (uuid 3fde9fe5-d477-4d08-ac9b-07c982af650f)
   )
-  (label "1w" (at 161.29 111.76 180)
+  (label "1w" (at 161.29 124.46 180)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 45145fd8-b093-4625-a8bd-cd6a2d3e2a51)
   )
